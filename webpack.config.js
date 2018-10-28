@@ -1,3 +1,15 @@
+// import ScreepsWebpackPlugin from 'screeps-webpack-plugin'
+
+// module.exports = {
+//     target: 'node',
+//     entry: 'src/main.ts',
+//     output: {
+//         path: 'dist',
+//         filename: 'main'
+//     },
+//     plugins: [new ScreepsWebpackPlugin(options)]
+// }
+
 const path = require('path');
 const ScreepsWebpackPlugin = require("./src/screeps-webpack-plugin/index");
 
@@ -14,18 +26,20 @@ module.exports = env => {
 
     return {
         mode: "development",
+        target: "node",
         entry: './src/main.ts',
-        devtool: "inline-source-map",
+        //        devtool: "inline-source-map",
         output: {
             filename: 'main.js',
-            path: path.resolve(__dirname, 'dist')
+            path: path.resolve(__dirname, 'dist'),
+            libraryTarget: "commonjs"
         },
         resolve: {
             extensions: ['.ts', '.js'],
         },
         module: {
             rules: [
-                { test: /\.js$/, use: ["source-map-loader"], enforce: "pre" },
+                //                { test: /\.js$/, use: ["source-map-loader"], enforce: "pre" },
                 { test: /\.tsx?$/, loader: 'ts-loader' },
             ]
         },

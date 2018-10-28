@@ -17,5 +17,6 @@
   },
   "[typescript]": {
     "editor.formatOnSave": true
-  }
+  },
+  "npm-scripts.showStartNotification": false
 }

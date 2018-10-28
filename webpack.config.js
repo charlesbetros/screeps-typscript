@@ -1,15 +1,3 @@
-// import ScreepsWebpackPlugin from 'screeps-webpack-plugin'
-
-// module.exports = {
-//     target: 'node',
-//     entry: 'src/main.ts',
-//     output: {
-//         path: 'dist',
-//         filename: 'main'
-//     },
-//     plugins: [new ScreepsWebpackPlugin(options)]
-// }
-
 const path = require('path');
 const ScreepsWebpackPlugin = require("./src/screeps-webpack-plugin/index");
 

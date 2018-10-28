@@ -3,8 +3,15 @@
     "name": "screeps-betros-ts",
     "private": true,
     "devDependencies": {
+        "@types/jest": "^23.3.8",
+        "@types/lodash": "^4.14.117",
+        "@types/node": "^10.12.0",
         "@types/screeps": "^2.5.1",
+        "jest": "^23.6.0",
+        "jest-environment-node": "^23.4.0",
+        "screeps-server-mockup": "^1.4.3",
         "source-map-loader": "^0.2.4",
+        "ts-jest": "^23.10.4",
         "ts-loader": "^5.2.2",
         "typescript": "^3.1.3",
         "webpack": "^4.22.0",
@@ -12,16 +19,17 @@
         "webpack-notifier": "^1.7.0"
     },
     "dependencies": {
+        "lodash": "^4.17.11",
         "screeps-api": "^1.7.2",
         "git-rev-sync": "^1.12.0"
     },
     "scripts": {
         "lint": "tslint -p tsconfig.json \"src/**/*.ts\"",
-        "build": "webpack --progress",
+        "build": "webpack --progress --env.DEST=",
         "push-main": "webpack --progress --env.DEST=main",
         "push-pserver": "webpack --progress --env.DEST=pserver",
         "push-sim": "webpack --progress --env.DEST=sim",
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest --forceExit",
         "watch-main": "webpack --progress --watch --env.DEST=main",
         "watch-pserver": "webpack --progress --watch --env.DEST=pserver",
         "watch-sim": "webpack --progress --watch --env.DEST=sim"
